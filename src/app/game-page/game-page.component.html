@@ -1,1 +1,14 @@
-<p>game-page works!</p>
+
+
+<p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template pTemplate="header">
+        <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+    </ng-template>
+    <ng-template pTemplate="title"> WORD </ng-template>
+    <ng-template pTemplate="subtitle"> WordTranslate </ng-template>
+    <ng-template pTemplate="footer">
+        <div class="flex gap-4 mt-1">
+            <p-button label="Translate" class="w-full" styleClass="w-full" />
+        </div>
+    </ng-template>
+</p-card>
