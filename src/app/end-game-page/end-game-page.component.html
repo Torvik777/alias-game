@@ -1,5 +1,31 @@
 <div class="container">
     <h1>Ваш результат</h1>
+    <div class="stausBar">    
+    <div class="flex-wrapper">
+        <span class="stausBar__el guessed">Відгадано: {{gameDataService.guessedWords().length}}</span>
+        <span class="stausBar__el not-guessed">Пропущено: {{gameDataService.notGuessedWords().length}}</span>
+    </div>
+    </div>
     <!-- <h2>рахунок: </h2> -->
     <p-button [routerLink]="['']" label="Спробувати знову" />
+    @if (needToChooseLastWord()) {
+        <div class="lastWord-menu">
+            <h3>Останнє слово - {{lastWord.word}} - було вгадане?</h3>
+            <div class="lastWord-menu-wrapper">
+                <p-button severity="success" (onClick)="addLastWord(true)" label="Так" />
+                <p-button severity="danger" (onClick)="addLastWord(false)" label="Ні" />
+            </div>
+        </div>
+    }
+
+    <div class="was-words">
+        @for (item of gameDataService.guessedWords(); track $index) {
+            <span>{{item.word}}</span>
+        }
+    </div>
+    <div class="was-words">
+        @for (item of gameDataService.notGuessedWords(); track $index) {
+            <span>{{item.word}}</span>
+        }
+    </div>
 </div>

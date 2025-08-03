@@ -1,8 +1,36 @@
-:host {
+.game-zone {
     width: 100%;
     height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.stausBar{
+    position: fixed;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:12px;
+
+    .flex-wrapper{
+        display: flex;
+        gap: 20px;
+    }
+    
+    .stausBar__el{
+        &.timer{
+        font-size: 28px;
+        }
+        &.guessed{
+            color: var(--p-green-500);
+        }
+        &.not-guessed {
+            color: var(--p-red-500);
+        }
+
+        
+    }
 }

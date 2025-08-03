@@ -1,14 +1,27 @@
 
-
-<p-card [style]="{ width: '25rem', overflow: 'hidden' }">
-    <ng-template pTemplate="header">
-        <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-    </ng-template>
-    <ng-template pTemplate="title"> WORD </ng-template>
-    <ng-template pTemplate="subtitle"> WordTranslate </ng-template>
-    <ng-template pTemplate="footer">
-        <div class="flex gap-4 mt-1">
-            <p-button label="Translate" class="w-full" styleClass="w-full" />
+<div class="game-zone" (touchstart)="onStart($event)" (mousedown)="onStart($event)"
+        (mouseup)="onEnd($event)" (touchend)="onEnd($event)">
+    <div class="stausBar">
+        <span class="stausBar__el timer">{{timerService.timeLeft()}}</span>
+        <div class="flex-wrapper">
+            <span class="stausBar__el guessed">Відгадано: {{gameDataService.guessedWords().length}}</span>
+            <span class="stausBar__el not-guessed">Пропущено: {{gameDataService.notGuessedWords().length}}</span>
         </div>
-    </ng-template>
-</p-card>
+    </div>
+
+    <div #cardWrapper class="card-wrapper" >
+        <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+            <ng-template pTemplate="header">
+                <!-- <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" /> -->
+            </ng-template>
+            <ng-template pTemplate="title"> {{currenWord().word}} </ng-template>
+            <ng-template pTemplate="subtitle"> {{isTranslated? currenWord().translation: '----------'}} </ng-template>
+            <ng-template pTemplate="footer">
+                <div class="flex gap-4 mt-1">
+                    <p-button (onClick)="changeTranslateStatus(true)" label="Translate" class="w-full"
+                        styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

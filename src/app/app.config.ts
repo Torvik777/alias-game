@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
               preset: MyPreset,
 
               options: {
-                
+                useColorSchemeMediaQuery: false
               }
             }
         })]

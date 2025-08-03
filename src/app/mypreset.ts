@@ -2,6 +2,10 @@ import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
 
 export const MyPreset = definePreset(Aura, {
+      name: 'my-dark-theme',
+  baseTheme: Aura, // або LaraDark, залежно від того, яку базову тему використовуєш
+        darkMode: "true",  // <<< ВАЖЛИВО: це увімкне темний режим за замовчуванням
+        scale: 14,
     semantic: {
         primary: {
             50: '{violet.200}',

@@ -1,0 +1,33 @@
+<div class="container">
+    <p-button [routerLink]="['']" class="setting-btn" icon="pi pi-check" aria-label="Save" />
+    <h2>Вибір команди</h2>
+    <button>Додати команду</button>
+    <ul>
+        <li>
+            <img src="" alt="">
+            <p>Назва</p>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p>Назва</p>
+        </li>
+
+    </ul>
+    <button>Cкинeти рахунок</button>
+     
+    <h2>Вибір словника</h2>
+    <!-- Випадаючий список -->
+    <ul>
+        <li>Фразеологізми</li>
+        <li>Речення</li>
+        <li>B1</li>
+        <li>B2</li>
+        <li>C1</li>
+        <li>Топ 1000 найпопулярніших</li>
+    </ul>
+
+    @for (item of teamsStaticList; track item.name) {
+        <img class="team-img" [src]="item.icon" alt="{{item.name}}">
+    }
+    
+</div>
