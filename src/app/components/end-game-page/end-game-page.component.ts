@@ -1,12 +1,15 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { GameDataService } from '../services/game-data.service';
+import { GameDataService } from '../../services/game-data.service';
+import { MessageModule } from 'primeng/message';
+
+
 
 @Component({
   selector: 'app-end-game-page',
   standalone: true,
-  imports: [ButtonModule, RouterLink],
+  imports: [ButtonModule, RouterLink, MessageModule],
   templateUrl: './end-game-page.component.html',
   styleUrl: './end-game-page.component.scss'
 })

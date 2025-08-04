@@ -6,6 +6,12 @@
     align-items: center;
     justify-content: center;
 }
+.game-control-btn-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
 .setting-btn{
     position: absolute;
     top: 200px;

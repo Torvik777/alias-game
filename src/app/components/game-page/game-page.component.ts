@@ -1,10 +1,9 @@
-import { Import } from './../../../node_modules/@angular/cdk/schematics/update-tool/utils/imports.d';
 import { ButtonModule } from 'primeng/button';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { GameDataService } from '../services/game-data.service';
+import { GameDataService } from '../../services/game-data.service';
 import { inject,computed, effect } from '@angular/core';
-import { TimerService } from '../services/timer.service';
+import { TimerService } from '../../services/timer.service';
 import { Router } from '@angular/router';
 import gsap from 'gsap';
 

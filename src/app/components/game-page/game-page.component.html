@@ -18,7 +18,7 @@
             <ng-template pTemplate="subtitle"> {{isTranslated? currenWord().translation: '----------'}} </ng-template>
             <ng-template pTemplate="footer">
                 <div class="flex gap-4 mt-1">
-                    <p-button (onClick)="changeTranslateStatus(true)" label="Translate" class="w-full"
+                    <p-button severity="secondary"  variant="outlined" (onClick)="changeTranslateStatus(true)" label="Translate" class="w-full"
                         styleClass="w-full" />
                 </div>
             </ng-template>

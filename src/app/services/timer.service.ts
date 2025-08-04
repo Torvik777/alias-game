@@ -5,7 +5,7 @@ import { interval, Subscription } from 'rxjs';
   providedIn: 'root',
 })
 export class TimerService {
-  private defaultMinutes = 2;
+  private defaultMinutes = 0.2;
   private totalSeconds = signal(this.defaultMinutes * 60);
 
   // computed для відображення у форматі MM:SS

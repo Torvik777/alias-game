@@ -25,10 +25,10 @@
         font-size: 28px;
         }
         &.guessed{
-            color: var(--p-green-500);
+            color: var(--p-green-600);
         }
         &.not-guessed {
-            color: var(--p-red-500);
+            color: var(--p-yellow-400);
         }
 
         

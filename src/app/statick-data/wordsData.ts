@@ -1,6 +1,9 @@
 import { Word } from "../models/models"
 
-export const testDataС1: Word[] = [
+
+
+
+export const testDataC1: Word[] = [
   { "word": "awkward", "translation": "незручний, недоречний" },
   { "word": "brag", "translation": "хвалитися" },
   { "word": "clumsy", "translation": "незграбний" },
@@ -350,3 +353,4 @@ export const testData: Word[] = [
   { word: "heat", translation: "спека" },
   { word: "umbrella", translation: "парасолька" }
 ];
+

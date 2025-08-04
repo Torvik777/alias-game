@@ -1,13 +1,15 @@
-import { testData } from '../statick-data/testData';
+import { testData } from '../statick-data/wordsData';
 import { computed, Injectable } from '@angular/core';
 import { Word } from '../models/models';
 import { signal } from '@angular/core';
+import { dictionaryes } from '../statick-data/dictionary-select';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameDataService {
-  private wordsCardsList = testData;
+  // todo тут зробити параметр який ми передаємо для визначення словника
+  private wordsCardsList = dictionaryes['1000 Common Words'];
   
   private wordCounter = signal<number>(0);
   public currentWord = computed<Word>(() => {

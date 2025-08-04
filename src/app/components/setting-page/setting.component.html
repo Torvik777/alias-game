@@ -1,0 +1,23 @@
+<div class="container">
+    
+    <h2>Вибір команди</h2>
+    <p-listbox   [options]="teamsService.teamsStaticList" [checkmark]="true" [(ngModel)]="selectedTeamModel"
+        optionLabel="name" [multiple]="true" [metaKeySelection]="false" class="w-full md:w-56" />
+     
+    <h2>Вибір словника</h2>
+    <!-- Випадаючий список -->
+    <p-listbox [options]="dictionaryService.dictionaryOptions" [checkmark]="true" [(ngModel)]="selectedDictionary"
+        optionLabel="label" [multiple]="false" [metaKeySelection]="false" class="w-full md:w-56" />
+
+    <!-- @for (item of teamsService.teamsStaticList; track item.name) {
+        <img class="team-img" [src]="item.icon" alt="{{item.name}}">
+    } -->
+
+    <!-- TO DO  -->
+     <!-- ДОДАТИ ВИБІР ЧАСУ РАУНДА -->
+      <!-- ДОДАТИ ВИБІР КІЛЬКОСТІ БАЛІВ ДО ПЕРЕМОГИ -->
+
+
+    <p-button [routerLink]="['/start-new-round']" severity="contrast" class="setting-btn" icon="pi pi-check" aria-label="Save" />
+        
+</div>

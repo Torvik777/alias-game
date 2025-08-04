@@ -7,25 +7,29 @@
     </div>
     </div>
     <!-- <h2>рахунок: </h2> -->
-    <p-button [routerLink]="['']" label="Спробувати знову" />
+    <p-button severity="contrast" [routerLink]="['']" label="Спробувати знову" />
     @if (needToChooseLastWord()) {
         <div class="lastWord-menu">
             <h3>Останнє слово - {{lastWord.word}} - було вгадане?</h3>
             <div class="lastWord-menu-wrapper">
-                <p-button severity="success" (onClick)="addLastWord(true)" label="Так" />
-                <p-button severity="danger" (onClick)="addLastWord(false)" label="Ні" />
+                <!-- <p-button severity="success" (onClick)="addLastWord(true)" label="Так" /> -->
+                <p-button label="Yes" variant="outlined" (onClick)="addLastWord(true)" severity="success" />
+                <!-- <p-button severity="danger" (onClick)="addLastWord(false)" label="Ні" /> -->
+                <p-button label="No" variant="outlined" (onClick)="addLastWord(false)" severity="warn" />
             </div>
         </div>
     }
 
     <div class="was-words">
         @for (item of gameDataService.guessedWords(); track $index) {
-            <span>{{item.word}}</span>
+            <!-- <span>{{item.word}}</span> -->
+            <p-message severity="success">{{item.word}}</p-message>
         }
     </div>
     <div class="was-words">
         @for (item of gameDataService.notGuessedWords(); track $index) {
-            <span>{{item.word}}</span>
+            <!-- <span>{{item.word}}</span> -->
+            <p-message severity="warn">{{item.word}}</p-message>
         }
     </div>
 </div>

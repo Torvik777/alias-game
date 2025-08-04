@@ -1,0 +1,12 @@
+<div class="container">
+    <!-- <p-button [routerLink]="['setting']" class="setting-btn" icon="pi pi-spin pi-cog" aria-label="Options" /> -->
+    <!-- <h1>New Game</h1> -->
+    <!-- <h2>рахунок: </h2> -->
+     <div class="game-control-btn-wrapper">
+        <p-button [routerLink]="['setting']" severity="contrast" label="New Game" />
+        @if (gameLogickControlService.isActiveGame()) {
+            <p-button [routerLink]="['start-new-round']" severity="contrast" label="Continue" />
+        }
+     </div>
+
+</div>
