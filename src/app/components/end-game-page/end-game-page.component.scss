@@ -56,3 +56,18 @@
     gap: 10px;
     flex-wrap: wrap;
 }
+
+.team-identity {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.team-logo-min {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: white;
+}

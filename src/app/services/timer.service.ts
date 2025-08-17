@@ -5,8 +5,8 @@ import { interval, Subscription } from 'rxjs';
   providedIn: 'root',
 })
 export class TimerService {
-  private defaultMinutes = 0.2;
-  private totalSeconds = signal(this.defaultMinutes * 60);
+  defaultSeconds = signal(120);
+  private totalSeconds = signal(this.defaultSeconds());
 
   // computed для відображення у форматі MM:SS
   readonly timeLeft = computed(() => {
@@ -22,11 +22,15 @@ export class TimerService {
   private timerSubscription: Subscription | null = null;
 
   constructor() {
-    // автоматично оновлюємо isTimeOver, коли totalSeconds змінюється
-    // effect(() => {
-    //   this.isTimeOver.set(this.totalSeconds() === 0);
-    // });
+  effect(() => {
+    const newDefault = this.defaultSeconds();
+    // Ставимо тільки якщо totalSeconds ще не відрізняється
+      if (this.totalSeconds() !== newDefault) {
+        this.totalSeconds.set(newDefault);
+      }
+    });
   }
+  
 
   start(): void {
     this.stop(); // перестраховка
@@ -41,9 +45,9 @@ export class TimerService {
     });
   }
 
-  private reset(minutes: number = this.defaultMinutes): void {
+  private reset(seconds: number = this.defaultSeconds()): void {
     this.stop();
-    this.totalSeconds.set(minutes * 60);
+    this.totalSeconds.set(seconds);
     this.isTimeOver.set(false);
   }
 

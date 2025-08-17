@@ -1,13 +1,25 @@
 <div class="container">
     
-    <h2>Вибір команди</h2>
-    <p-listbox   [options]="teamsService.teamsStaticList" [checkmark]="true" [(ngModel)]="selectedTeamModel"
-        optionLabel="name" [multiple]="true" [metaKeySelection]="false" class="w-full md:w-56" />
+    <h2>Choose at least 2 teams</h2>
+    <p-listbox   [options]="teamsService.teamsStaticList" [checkmark]="true" [(ngModel)]="selectedTeams"
+        optionLabel="name" [multiple]="true" [scrollHeight]="'18rem'"  [metaKeySelection]="false" class="w-full md:w-56" />
+    @if(!this.isSettingsValid()){
+         <p-message class="error-message" severity="error" icon="pi pi-times-circle" styleClass="mb-2">We need at least two teams</p-message>
+    }
+   
      
-    <h2>Вибір словника</h2>
+    <h2>Choose the set of words</h2>
     <!-- Випадаючий список -->
     <p-listbox [options]="dictionaryService.dictionaryOptions" [checkmark]="true" [(ngModel)]="selectedDictionary"
         optionLabel="label" [multiple]="false" [metaKeySelection]="false" class="w-full md:w-56" />
+
+    <h2>Round duration - {{defaultSeconds}} seconds</h2>
+    <!-- TODO ПОВЕРНУТИ МІНІМУМ 30 секунд і старт з 30 секунд -->
+    <p-slider [(ngModel)]="defaultSeconds" [step]="5" [min]="5" [max]="240" class="w-full" />
+
+    <h2>Number of words to win - {{wordsNeededToWin}}</h2>
+    <p-slider [(ngModel)]="wordsNeededToWin" [step]="1" [min]="1" [max]="100" class="w-full" />
+
 
     <!-- @for (item of teamsService.teamsStaticList; track item.name) {
         <img class="team-img" [src]="item.icon" alt="{{item.name}}">
@@ -18,6 +30,6 @@
       <!-- ДОДАТИ ВИБІР КІЛЬКОСТІ БАЛІВ ДО ПЕРЕМОГИ -->
 
 
-    <p-button [routerLink]="['/start-new-round']" severity="contrast" class="setting-btn" icon="pi pi-check" aria-label="Save" />
+    <p-button (onClick)="goToGame()" severity="contrast" class="setting-btn" icon="pi pi-check" aria-label="Save" />
         
 </div>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
+import { TeamsService } from '../../services/teams.service';
 
 @Component({
   selector: 'app-start-round-page',
@@ -10,5 +11,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './start-round-page.component.scss'
 })
 export class StartRoundPageComponent {
+  protected teamsService = inject(TeamsService);
+  
+
 
 }

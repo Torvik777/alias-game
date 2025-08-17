@@ -14,7 +14,8 @@ export const appConfig: ApplicationConfig = {
               preset: MyPreset,
 
               options: {
-                useColorSchemeMediaQuery: false
+                useColorSchemeMediaQuery: false,
+                 darkModeSelector: '.always-dark'
               }
             }
   }),

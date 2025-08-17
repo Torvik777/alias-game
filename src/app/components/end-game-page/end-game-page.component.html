@@ -1,5 +1,10 @@
 <div class="container">
+    <div class="team-identity">
+        <img class="team-logo-min" [src]="teamsService.activeTeam().icon" alt="Логотип команди">
+        <p class="team-name">{{teamsService.activeTeam().name}}</p>
+    </div>
     <h1>Ваш результат</h1>
+
     <div class="stausBar">    
     <div class="flex-wrapper">
         <span class="stausBar__el guessed">Відгадано: {{gameDataService.guessedWords().length}}</span>
@@ -7,7 +12,7 @@
     </div>
     </div>
     <!-- <h2>рахунок: </h2> -->
-    <p-button severity="contrast" [routerLink]="['']" label="Спробувати знову" />
+    
     @if (needToChooseLastWord()) {
         <div class="lastWord-menu">
             <h3>Останнє слово - {{lastWord.word}} - було вгадане?</h3>
@@ -32,4 +37,7 @@
             <p-message severity="warn">{{item.word}}</p-message>
         }
     </div>
+    
+    <p-button severity="contrast"(onClick)="goToNextRound()" label="Go next round" />
+    <p-button severity="contrast" [routerLink]="['']" label="Exit" />
 </div>

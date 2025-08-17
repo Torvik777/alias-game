@@ -5,6 +5,7 @@ import { Injectable, signal } from '@angular/core';
 })
 export class GameLogickControlService {
   isActiveGame = signal<boolean>(false);
+  wordsNeededToWin = signal<number>(20);
 
   constructor() { }
 }

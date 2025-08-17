@@ -31,7 +31,7 @@ export const teamsStaticList: Team[] = [
         score: 0
     },
     {
-        name: "Sheep",
+        name: "Sheeps",
         icon: "/team-icons/sheep.png",
         score: 0
     },
