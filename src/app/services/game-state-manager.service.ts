@@ -5,6 +5,7 @@ import { GameLogickControlService } from './game-logick-control.service';
 import { StorageService } from './storage.service';
 import { TeamsService } from './teams.service';
 import { TimerService } from './timer.service';
+import { Team } from '../models/team';
 
 
 @Injectable({
@@ -18,6 +19,9 @@ export class GameStateManagerService {
   protected teamsService = inject(TeamsService);
   protected timerService = inject(TimerService);
 
+
+
+
   constructor() { 
 
   }
@@ -27,6 +31,7 @@ export class GameStateManagerService {
       
     }
   };
+
 
 
 

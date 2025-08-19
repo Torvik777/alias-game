@@ -1,1 +1,74 @@
-<p>win-page works!</p>
+<div class="container">
+@if(gameLogickControlService.isDraw()){
+        <div class="win-team-wrapper draw">
+            <h1 class="title">Friendship won</h1>
+            <h2 class="sub-title">Congratulations to the winning teams.</h2>
+            <div class="win-teams-wrapper">
+                <div class="win-team-el">
+                    <img class="win-team-icon" src="/team-icons/cats.png" alt="">
+                    <h2 class="win-team-title">Teamname win with score 20</h2>
+                    <!-- <h3 class="win-team-score">20</h3> -->
+                </div>
+                <div class="win-team-el">
+                    <img class="win-team-icon" src="/team-icons/cats.png" alt="">
+                    <h2 class="win-team-title">Teamname win with score 20</h2>
+                    <!-- <h3 class="win-team-score">20</h3> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="lose-team-statistic">
+            <h4>Thank you for participating</h4>
+            <ul class="lose-team-list">
+                <li class="lose-team-item">
+                    <div>
+                        <img src="" alt="">
+                        <span>Teamname</span>
+                    </div>
+                    <div>
+                        <span>15</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+}@else {
+    <div class="win-team-wrapper">
+        <h1 class="title">Congratulations to the winning team.</h1>
+        <img class="win-team-icon" src="/team-icons/cats.png" alt="">
+        <h2 class="win-team-title">Teamname win with score 20</h2>
+    </div>
+
+    <div class="lose-team-statistic">
+        <h4>Thank you for participating</h4>
+        <ul class="lose-team-list">
+            <li class="lose-team-item">
+                <div class="lose-team-identity">
+                    <img class="lose-team-icon" src="/team-icons/cats.png" alt="">
+                    <span class="lose-team-name">Teamname</span>
+                </div>
+                <div>
+                    <span>15</span>
+                </div>
+            </li>
+
+            <li class="lose-team-item">
+                <div class="lose-team-identity">
+                    <img class="lose-team-icon" src="/team-icons/cats.png" alt="">
+                    <span class="lose-team-name">Teamname</span>
+                </div>
+                <div>
+                    <span>15</span>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+}
+
+<div class="btn-wrapper">
+    <p-button [routerLink]="['']" severity="contrast" label="Continue" />
+</div>
+
+</div>

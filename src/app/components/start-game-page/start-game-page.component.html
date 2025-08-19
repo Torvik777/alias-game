@@ -3,7 +3,7 @@
     <!-- <h1>New Game</h1> -->
     <!-- <h2>рахунок: </h2> -->
      <div class="game-control-btn-wrapper">
-        <p-button [routerLink]="['setting']" severity="contrast" label="New Game" />
+        <p-button [routerLink]="['setting']" (onClick)="storageService.clearAll()" severity="contrast" label="New Game" />
         @if (gameLogickControlService.isActiveGame()) {
             <p-button [routerLink]="['start-new-round']" severity="contrast" label="Continue" />
         }

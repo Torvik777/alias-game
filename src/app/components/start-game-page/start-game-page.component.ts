@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
 import { GameLogickControlService } from '../../services/game-logick-control.service';
+import { StorageService } from '../../services/storage.service';
 
 
 @Component({
@@ -13,4 +14,7 @@ import { GameLogickControlService } from '../../services/game-logick-control.ser
 })
 export class StartGamePageComponent {
   gameLogickControlService = inject(GameLogickControlService);
+  storageService = inject(StorageService);
+
+  
 }

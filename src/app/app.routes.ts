@@ -4,6 +4,7 @@ import { GamePageComponent } from './components/game-page/game-page.component';
 import { EndGamePageComponent } from './components/end-game-page/end-game-page.component';
 import { SettingComponent } from './components/setting-page/setting.component';
 import { StartRoundPageComponent } from './components/start-round-page/start-round-page.component';
+import { WinPageComponent } from './components/win-page/win-page.component';
 
 
 export const routes: Routes = [
@@ -12,6 +13,6 @@ export const routes: Routes = [
 { path: 'gameEnd', component: EndGamePageComponent },
 { path: 'setting', component: SettingComponent },
 { path: 'start-new-round', component: StartRoundPageComponent },
-
+{ path: 'win-page', component: WinPageComponent }
 
 ];

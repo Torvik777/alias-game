@@ -1,0 +1,79 @@
+
+
+.win-team-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.title {
+    text-align: center;
+}
+.win-team-icon{
+    width: 200px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.lose-team-statistic{
+    margin-top: 20px;
+    h4{
+        text-align: center;
+    }
+}
+.lose-team-list{
+    list-style: none;
+    padding: 0px;
+
+}
+.lose-team-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--p-neutral-700);
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 8px;
+}
+.lose-team-identity{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .lose-team-icon{
+        width: 30px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+    }
+}
+.btn-wrapper{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+.win-team-wrapper.draw{
+    .win-teams-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .win-team-el{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .win-team-icon{
+        width: 100px;
+        padding: 8px;
+    }
+    .win-team-title{
+        text-align: center;
+    }
+}
