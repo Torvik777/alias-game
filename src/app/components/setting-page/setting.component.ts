@@ -56,13 +56,23 @@ export class SettingComponent {
     this.storageService.save<Team[]>('selectedTeams', this.teamsService.teamList())
   }
 
-  get selectedDictionary(): Word[] {
+  get selectedDictionary(): string {
     return this.dictionaryService.selectedDictionary();
   }
 
-  set selectedDictionary(value: Word[]) {
-    this.dictionaryService.selectedDictionary.set(value);
-    this.storageService.save< Word[]>('selectedDictionary', this.dictionaryService.selectedDictionary())
+  set selectedDictionary(value: string) {
+    if (value == null) {
+      const lastValue = this.dictionaryService.selectedDictionary();
+        this.dictionaryService.selectedDictionary.set(value);
+          setTimeout(() => {
+          this.dictionaryService.selectedDictionary.set(lastValue);
+      }, 10);
+    } else {
+      this.dictionaryService.selectedDictionary.set(value);
+      
+      this.storageService.save<string>('selectedDictionary', this.dictionaryService.selectedDictionary())
+    }
+
   }
 
   get defaultSeconds(): number{

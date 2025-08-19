@@ -38,6 +38,9 @@
         }
     </div>
     
-    <p-button severity="contrast"(onClick)="goToNextRound()" label="Go next round" />
-    <p-button severity="contrast" [routerLink]="['']" label="Exit" />
+    <div class="buttons-wrapper">
+        <p-button severity="contrast" (onClick)="goToNextRound()" label="Go next round" />
+        <p-button severity="contrast" [routerLink]="['']" label="Exit" />
+    </div>
+
 </div>

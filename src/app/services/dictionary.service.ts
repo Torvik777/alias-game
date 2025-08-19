@@ -8,6 +8,6 @@ import { dictionaryOptions } from '../statick-data/dictionary-select';
 })
 export class DictionaryService {
  dictionaryOptions = dictionaryOptions;
- selectedDictionary  = signal<Word[]>([]);
+ selectedDictionary  = signal<string>("1000 Common Words");
  
 }

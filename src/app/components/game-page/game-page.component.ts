@@ -85,8 +85,10 @@ export class GamePageComponent {
 
   onStart(event: TouchEvent | MouseEvent) {
     this.startY = this.getClientY(event);
-    console.log(this.startY);
-    event.preventDefault?.();
+    // console.log(this.startY);
+    if (event instanceof MouseEvent) {
+      event.preventDefault();
+    }
   }
 
   onEnd(event: TouchEvent | MouseEvent) {
@@ -140,7 +142,7 @@ export class GamePageComponent {
   }
   finishGame() {
     // перенаправлення на сторінку результатів
-    console.log('finishGame');
+    // console.log('finishGame');
     this.router.navigate(['/gameEnd']);
   }
 

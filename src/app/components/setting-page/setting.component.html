@@ -10,7 +10,7 @@
      
     <h2>Choose the set of words</h2>
     <!-- Випадаючий список -->
-    <p-listbox [options]="dictionaryService.dictionaryOptions" [checkmark]="true" [(ngModel)]="selectedDictionary"
+    <p-listbox [options]="dictionaryService.dictionaryOptions" [checkmark]="true" [optionValue]="'label'" [(ngModel)]="selectedDictionary"
         optionLabel="label" [multiple]="false" [metaKeySelection]="false" class="w-full md:w-56" />
 
     <h2>Round duration - {{defaultSeconds}} seconds</h2>

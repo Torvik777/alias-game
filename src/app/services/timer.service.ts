@@ -1,4 +1,4 @@
-import { Injectable, computed, effect, signal } from '@angular/core';
+import { Injectable, computed, effect, signal, untracked  } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Injectable({
@@ -21,14 +21,25 @@ export class TimerService {
 
   private timerSubscription: Subscription | null = null;
 
-  constructor() {
-  effect(() => {
-    const newDefault = this.defaultSeconds();
-    // Ставимо тільки якщо totalSeconds ще не відрізняється
-      if (this.totalSeconds() !== newDefault) {
-        this.totalSeconds.set(newDefault);
+  // constructor() {
+  // effect(() => {
+  //   const newDefault = this.defaultSeconds();
+  //   // Ставимо тільки якщо totalSeconds ще не відрізняється
+  //     if (this.totalSeconds() !== newDefault) {
+  //       this.totalSeconds.set(newDefault);
+  //     }
+  //   });
+  // }
+
+    constructor() {
+    effect(() => {
+      const nextDefault = this.defaultSeconds();
+      const current = untracked(() => this.totalSeconds()); // don't track this
+
+      if (current !== nextDefault) {
+        this.totalSeconds.set(nextDefault); // write allowed below
       }
-    });
+    }, { allowSignalWrites: true });
   }
   
 
